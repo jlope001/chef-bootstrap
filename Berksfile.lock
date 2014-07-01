@@ -1,0 +1,8 @@
+DEPENDENCIES
+  bootstrap
+    path: site-cookbooks/bootstrap
+
+GRAPH
+  apt (2.4.0)
+  bootstrap (0.1.0)
+    apt (>= 0.0.0)
