@@ -32,6 +32,10 @@ end
     action :install
   end
 end
+execute "enable dvd playback" do
+  command "/usr/share/doc/libdvdread4/install-css.sh"
+  action :run
+end
 
 # uninstall useless packages
 %w{unity-lens-shopping}.each do |pkg|
@@ -39,14 +43,23 @@ end
     action :install
   end
 end
-
-
-# libsendgrid setup
-execute "enable dvd playback" do
-  command "/usr/share/doc/libdvdread4/install-css.sh"
-  action :run
-end
 execute "disable privacy settings" do
   command "gsettings set com.canonical.Unity.Lenses disabled-scopes \"['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']\""
   action :run
 end
+
+
+# gnomefs
+apt_repository 'gencfsm' do
+  keyserver    'keyserver.ubuntu.com'
+  key          '0F68ADCA'
+  uri          'http://ppa.launchpad.net/gencfsm/ppa/ubuntu'
+  distribution distribution  node[:bootstrap][:distribution]
+  components   ['main']
+  keyserver    'keyserver.ubuntu.com'
+  key          'C300EE8C'
+end
+package "gnome-encfs-manager" do
+  action :install
+end
+

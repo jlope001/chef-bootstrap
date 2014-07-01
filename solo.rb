@@ -1,4 +1,4 @@
-cookbook_path "#{Dir.pwd}/cookbooks"
+cookbook_path "#{Dir.pwd}/berks-cookbooks"
 
 file_cache_path "#{Dir.pwd}/"
 json_attribs "#{Dir.pwd}/node.json"
