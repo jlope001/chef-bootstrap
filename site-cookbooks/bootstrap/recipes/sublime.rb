@@ -23,3 +23,21 @@ path = "/home/#{node[:bootstrap][:user]}/.config/sublime-text-3"
     action :create
   end
 end
+
+# setup configuration
+template "#{path/Packages/User/Preferences.sublime-settings}" do
+  source "sublime/preferences.global.conf.json"
+  owner app_config[:user]
+  group app_config[:user]
+end
+
+template "#{path/Packages/User/Ruby on Rails.sublime-settings}" do
+  source "sublime/preferences.ruby.conf.json"
+  owner app_config[:user]
+  group app_config[:user]
+end
+template "#{path/Packages/User/Python.sublime-settings}" do
+  source "sublime/preferences.python.conf.json"
+  owner app_config[:user]
+  group app_config[:user]
+end
