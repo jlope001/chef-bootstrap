@@ -10,12 +10,15 @@ package "sublime-text-installer" do
   action :install
 end
 
-path = "/home/#{node[:bootstrap][:user]}/.config/sublime-text-3/"
-%w{#{path}/Installed1\ Packages #{path}/Packages1/User }.each do |path|
+path = "/home/#{node[:bootstrap][:user]}/.config/sublime-text-3"
+[
+	"#{path}/Installed\ Packages",
+	"#{path}/Packages",
+	"#{path}/Packages/User",
+	].each do |path|
   directory path do
     owner node[:bootstrap][:user]
     group node[:bootstrap][:user]
-    path "/home/#{node[:bootstrap][:user]}/.config/sublime-text-3/"
     mode 00755
     action :create
   end
