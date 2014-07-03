@@ -1,2 +1,4 @@
 .kitchen/
 berks-cookbooks/
+*.pid
+*.out
