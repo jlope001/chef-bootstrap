@@ -36,6 +36,12 @@ git "#{path}/Packages/Python Flake8 Lint" do
   repository "https://github.com/dreadatour/Flake8Lint.git"
   action :checkout
 end
+regex = "\\\"popup\\\": true\\\,"
+replacement = "\\\"popup\\\": false\\\,"
+execute "remove popup notifications on python save" do
+  command "sed -i \"s/#{regex}/#{replacement}/g\" #{path}/Packages/Python\\ Flake8\\ Lint/Flake8Lint.sublime-settings"
+  action :run
+end
 
 # setup configuration
 template "#{path}/Packages/User/Preferences.sublime-settings" do
