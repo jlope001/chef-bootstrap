@@ -1,0 +1,16 @@
+{
+    "installed_packages":
+    [
+        "BracketHighlighter",
+        "PackageResourceViewer",
+        "SideBarEnhancements",
+        "SideBarGit",
+        "SublimeCodeIntel",
+        "Python Flake8 Lint",
+        "Python Improved",
+        "Dockerfile Syntax Highlighting",
+        "GoSublime",
+        "PHP Companion",
+        "Vagrant"
+    ]
+}

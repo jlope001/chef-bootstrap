@@ -43,6 +43,13 @@ execute "remove popup notifications on python save" do
   action :run
 end
 
+# install other packages via config file - it will load up on next run
+template "#{path}/Packages/User/Package Control.sublime-settings" do
+  source "sublime/packages.conf.json"
+  owner node[:bootstrap][:user]
+  group node[:bootstrap][:user]
+end
+
 # setup configuration
 template "#{path}/Packages/User/Preferences.sublime-settings" do
   source "sublime/preferences.global.conf.json"
