@@ -31,18 +31,24 @@ remote_file "#{path}/Installed Packages/Package Control.sublime-package" do
   source "https://sublime.wbond.net/Package%20Control.sublime-package"
 end
 
+# setup python - flake8 plugin
+git "#{path}/Packages/Python Flake8 Lint" do
+  repository "https://github.com/dreadatour/Flake8Lint.git"
+  action :checkout
+end
+
 # setup configuration
-template "#{path}/Packages/User/Preferences.sublime-settings}" do
+template "#{path}/Packages/User/Preferences.sublime-settings" do
   source "sublime/preferences.global.conf.json"
   owner node[:bootstrap][:user]
   group node[:bootstrap][:user]
 end
-template "#{path}/Packages/User/Ruby\ on\ Rails.sublime-settings}" do
+template "#{path}/Packages/User/Ruby on Rails.sublime-settings" do
   source "sublime/preferences.ruby.conf.json"
   owner node[:bootstrap][:user]
   group node[:bootstrap][:user]
 end
-template "#{path}/Packages/User/Python.sublime-settings}" do
+template "#{path}/Packages/User/Python.sublime-settings" do
   source "sublime/preferences.python.conf.json"
   owner node[:bootstrap][:user]
   group node[:bootstrap][:user]
