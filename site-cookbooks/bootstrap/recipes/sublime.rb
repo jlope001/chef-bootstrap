@@ -1,3 +1,4 @@
+# install sublime
 apt_repository 'sublime' do
   keyserver    'keyserver.ubuntu.com'
   uri          'http://ppa.launchpad.net/webupd8team/sublime-text-3/ubuntu'
@@ -10,6 +11,7 @@ package "sublime-text-installer" do
   action :install
 end
 
+# create config folders
 path = "/home/#{node[:bootstrap][:user]}/.config/sublime-text-3"
 [
 	"#{path}/Installed\ Packages",
@@ -24,20 +26,24 @@ path = "/home/#{node[:bootstrap][:user]}/.config/sublime-text-3"
   end
 end
 
-# setup configuration
-template "#{path/Packages/User/Preferences.sublime-settings}" do
-  source "sublime/preferences.global.conf.json"
-  owner app_config[:user]
-  group app_config[:user]
+# setup package control
+remote_file "#{path}/Installed Packages/Package Control.sublime-package" do
+  source "https://sublime.wbond.net/Package%20Control.sublime-package"
 end
 
-template "#{path/Packages/User/Ruby on Rails.sublime-settings}" do
-  source "sublime/preferences.ruby.conf.json"
-  owner app_config[:user]
-  group app_config[:user]
+# setup configuration
+template "#{path}/Packages/User/Preferences.sublime-settings}" do
+  source "sublime/preferences.global.conf.json"
+  owner node[:bootstrap][:user]
+  group node[:bootstrap][:user]
 end
-template "#{path/Packages/User/Python.sublime-settings}" do
+template "#{path}/Packages/User/Ruby\ on\ Rails.sublime-settings}" do
+  source "sublime/preferences.ruby.conf.json"
+  owner node[:bootstrap][:user]
+  group node[:bootstrap][:user]
+end
+template "#{path}/Packages/User/Python.sublime-settings}" do
   source "sublime/preferences.python.conf.json"
-  owner app_config[:user]
-  group app_config[:user]
+  owner node[:bootstrap][:user]
+  group node[:bootstrap][:user]
 end
