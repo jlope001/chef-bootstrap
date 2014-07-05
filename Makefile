@@ -1,7 +1,5 @@
 setup:
-	\curl -sSL https://get.rvm.io | bash -s stable --ruby
+	./scripts/rvm.sh
 
 install:
-	rm -rf ./berks-cookbooks
-	berks vendor
-	rvmsudo_secure_path=1 rvmsudo USER=`whoami` chef-solo -c solo.rb
+	./scripts/chef.sh
