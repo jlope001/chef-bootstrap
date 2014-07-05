@@ -14,6 +14,7 @@ end
 # create config folders
 path = "/home/#{node[:bootstrap][:user]}/.config/sublime-text-3"
 [
+  path,
 	"#{path}/Installed\ Packages",
 	"#{path}/Packages",
 	"#{path}/Packages/User",
