@@ -3,3 +3,4 @@ berks-cookbooks/
 *.pid
 remote_file/
 *.out
+*.key
