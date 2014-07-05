@@ -13,7 +13,8 @@ else
   echo "source $HOME/.rvm/scripts/rvm" >> ~/.bashrc
 fi
 
-gem install berkshelf
+# install required dependencies
+gem install berkshelf chef
 
 echo -e "\e[0m---"
 echo -e ""
