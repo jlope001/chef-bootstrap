@@ -61,7 +61,7 @@ template "#{path}/Packages/User/Ruby on Rails.sublime-settings" do
   owner node[:bootstrap][:user]
   group node[:bootstrap][:user]
 end
-template "#{path}/Packages/User/Python.sublime-settings" do
+template "#{path}/Packages/User/PythonImproved.sublime-settings" do
   source "sublime/preferences.python.conf.json"
   owner node[:bootstrap][:user]
   group node[:bootstrap][:user]
