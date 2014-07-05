@@ -12,3 +12,5 @@ else
   echo '-- adding rvm source entry'
   echo "source $HOME/.rvm/scripts/rvm" >> ~/.bashrc
 fi
+
+gem install berks

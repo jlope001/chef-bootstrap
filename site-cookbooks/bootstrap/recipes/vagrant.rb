@@ -15,13 +15,7 @@ file "/tmp/#{vagrant_deb_filename}" do
   action :delete
 end
 
-# install berkshelf
-execute "install berkshelf" do
-  command "gem install berkshelf"
-  action  :run
-  user    node[:bootstrap][:user]
-  group   node[:bootstrap][:user]
-end
+# install vagrant berkshelf
 execute "install vagrant berkshelf plugin" do
   command "vagrant plugin install vagrant-berkshelf --plugin-version '>= 2.0.1'"
   action  :run
