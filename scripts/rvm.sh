@@ -15,6 +15,8 @@ fi
 
 gem install berkshelf
 
-echo "---"
-echo "To start the setup in this terminal, you need to run \`source /home/$USER/.rvm/scripts/rvm\`"
-echo "---"
+echo -e "\e[0m---"
+echo -e ""
+echo -e "\e[100m\e[34mTo start the bootstrap in this terminal, you need to run \`source /home/$USER/.rvm/scripts/rvm\`"
+echo -e ""
+echo -e "\e[0m---"
