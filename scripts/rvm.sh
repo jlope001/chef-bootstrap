@@ -13,4 +13,4 @@ else
   echo "source $HOME/.rvm/scripts/rvm" >> ~/.bashrc
 fi
 
-gem install berks
+gem install berkshelf
