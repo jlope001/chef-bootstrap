@@ -8,4 +8,3 @@ end
 package "hipchat" do
   action :install
 end
-

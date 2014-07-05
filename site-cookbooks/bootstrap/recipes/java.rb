@@ -1,5 +1,4 @@
 apt_repository 'java' do
-  keyserver    'keyserver.ubuntu.com'
   uri          'http://ppa.launchpad.net/webupd8team/java/ubuntu'
   distribution  node[:bootstrap][:distribution]
   components   ['main']
