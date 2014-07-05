@@ -14,3 +14,7 @@ else
 fi
 
 gem install berkshelf
+
+echo "---"
+echo "To start the setup in this terminal, you need to run \`source /home/$USER/.rvm/scripts/rvm\`"
+echo "---"
