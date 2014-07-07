@@ -50,3 +50,19 @@ template "/home/#{node[:bootstrap][:user]}/.config/gtk-3.0/bookmarks" do
   owner node[:bootstrap][:user]
   group node[:bootstrap][:user]
 end
+
+# install google talk plugin
+deb_filename = "google-talkplugin_current_amd64.deb"
+remote_file "/tmp/#{deb_filename}" do
+  source "https://dl.google.com/linux/direct/#{deb_filename}"
+  mode 0644
+end
+
+dpkg_package "google_talk" do
+  source "/tmp/#{deb_filename}"
+  action :install
+end
+
+file "/tmp/#{deb_filename}" do
+  action :delete
+end
