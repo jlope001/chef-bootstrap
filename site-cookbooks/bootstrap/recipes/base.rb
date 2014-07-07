@@ -40,3 +40,13 @@ execute "disable privacy settings" do
   command "gsettings set com.canonical.Unity.Lenses disabled-scopes \"['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']\""
   action :run
 end
+
+# copy over custom bookmarks - specifically vagrant
+template "/home/#{node[:bootstrap][:user]}/.config/gtk-3.0/bookmarks" do
+  source "base/bookmarks.conf.rb"
+  variables ({
+    :user => node[:bootstrap][:user],
+  })
+  owner node[:bootstrap][:user]
+  group node[:bootstrap][:user]
+end
