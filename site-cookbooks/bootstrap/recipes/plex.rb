@@ -1,17 +1,16 @@
-apt_repository 'plex' do
-  uri          'http://ppa.launchpad.net/plexapp/plexht/ubuntu'
-  distribution  node[:bootstrap][:distribution]
-  components   ['main']
-  keyserver    'keyserver.ubuntu.com'
-  key          'EB7DFFFB'
+# install plex media server
+version = "0.9.9.12.504-3e7f93c"
+deb_filename = "plexmediaserver_#{version}_amd64.deb"
+remote_file "/tmp/#{deb_filename}" do
+  source "http://downloads.plexapp.com/plex-media-server/#{version}/#{deb_filename}"
+  mode 0644
 end
-package "plexmediaserver" do
+
+dpkg_package "plexmediaserver" do
+  source "/tmp/#{deb_filename}"
   action :install
 end
 
-# add newly created plux user to user group
-group node[:bootstrap] do
-  action :modify
-  members "plex"
-  append true
+file "/tmp/#{deb_filename}" do
+  action :delete
 end
