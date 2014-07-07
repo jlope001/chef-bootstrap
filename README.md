@@ -35,7 +35,7 @@ $ make install
 Below is a list of all software installed during the chef run.
 
 | software            | reason                          |
-| ------------------- |:-------------------------------:|
+| ------------------- | ------------------------------- |
 | vim                 | development                     |
 | git                 | development                     |
 | chromium            | browse all the internets        |
