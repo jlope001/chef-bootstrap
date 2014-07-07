@@ -1,5 +1,5 @@
 # install base packages
-%w{curl git vim chromium-browser keepassx rdiff-backup}.each do |pkg|
+%w{curl git vim chromium-browser keepassx}.each do |pkg|
   package pkg do
     action :install
   end
