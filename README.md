@@ -1,7 +1,7 @@
 # Bootstrap System
 Whenever installing a new linux desktop, I always find myself installing the same pieces of software over, and over again.
 
-My first stab at automating setup was a bash script.  It quickly became too complicated and difficult to maintain.  Enter (chef)[http://www.getchef.com/chef/], specifically (chef-solo)[http://docs.opscode.com/chef_solo.html].  Chef allows you to quickly, cleany provision your machine with minimal effort.
+My first stab at automating setup was a bash script.  It quickly became too complicated and difficult to maintain.  Enter [chef](http://www.getchef.com/chef/), specifically [chef-solo](http://docs.opscode.com/chef_solo.html).  Chef allows you to quickly, cleany provision your machine with minimal effort.
 
 ## Setup
 In order to bootstrap the system, you will need to install some pieces of software.
