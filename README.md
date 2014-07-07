@@ -52,3 +52,8 @@ Below is a list of all software installed during the chef run.
 | indicator-multiload | visual display of resources     |
 | hamster-indicator   | track how you utilize your time |
 | indicator-cpufreq   | control cpu utilization         |
+| google-talkplugin   | google hangouts                 |
+| my-weather-indicator| weather applet                  |
+| variety             | rotate wallpaper                |
+| plex                | stream video via DLNA           |
+| steam               | video games                     |
