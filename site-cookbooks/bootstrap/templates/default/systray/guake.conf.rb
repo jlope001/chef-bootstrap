@@ -2,6 +2,6 @@
 Terminal=false
 Type=Application
 Categories=
-GenericName=
+GenericName=guake
 NoDisplay=false
 Exec=guake

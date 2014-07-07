@@ -2,6 +2,6 @@
 Terminal=false
 Type=Application
 Categories=
-GenericName=
+GenericName=indicator-multiload
 NoDisplay=false
 Exec=indicator-multiload
