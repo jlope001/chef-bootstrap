@@ -6,6 +6,7 @@ execute "install oh my zsh" do
   action  :run
   user    node[:bootstrap][:user]
   group   node[:bootstrap][:user]
+  ignore_failure true
 end
 
 execute "update default theme to agnoster" do
