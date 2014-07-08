@@ -57,3 +57,4 @@ Below is a list of all software installed during the chef run.
 | variety             | rotate wallpaper                |
 | plex                | stream video via DLNA           |
 | steam               | video games                     |
+| zsh                 | terminal                        |
