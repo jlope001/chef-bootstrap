@@ -9,3 +9,4 @@ version          '0.1'
 recipe            "bootstrap::default", "Default bootstrap option"
 
 depends "apt"
+depends "docker"
