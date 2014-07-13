@@ -6,9 +6,9 @@ description      'Install and configure host machine'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.1'
 
-recipe            "bootstrap::vagrant", "Install vagrant for VM management"
-recipe            "bootstrap::docker", "Install docker focker lxc"
-recipe            "bootstrap::zsh", "Setup install zsh terminal"
+recipe            "bootstrap::default", "Default bootstrap option"
+recipe            "bootstrap::plex", "Include plex media server"
+recipe            "bootstrap::docker", "Install docker system"
 
 depends "apt"
 depends "docker"
