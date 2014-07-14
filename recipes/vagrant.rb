@@ -45,4 +45,5 @@ execute "install vagrant berkshelf plugin" do
   action  :run
   user    node[:bootstrap][:user]
   group   node[:bootstrap][:user]
+  environment ({'HOME' => "/home/#{node[:bootstrap][:user]}"})
 end
