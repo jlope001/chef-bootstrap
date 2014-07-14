@@ -9,7 +9,9 @@ This recipe is used to quickly bootstrap my host system with components I need f
 ### Default Setup
 Use the default recipe to install most commonly used components.
 
-```recipe[bootstrap::default]```
+```
+recipe[bootstrap::default]
+```
 
 The default setup will install the following components:
 
@@ -43,7 +45,9 @@ The default setup will install the following components:
 ### Multimedia System
 Use the default recipe to install plex media center to stream and play movies in your local network.
 
-```recipe[bootstrap::plex]```
+```
+recipe[bootstrap::plex]
+```
 
 | software            | reason                          |
 | ------------------- | ------------------------------- |
