@@ -1,38 +1,18 @@
 # Bootstrap System
-Whenever installing a new linux desktop, I always find myself installing the same pieces of software over, and over again.
+Chef recipe that will bootstrap a host system with components that I use for development.
 
-My first stab at automating setup was a bash script.  It quickly became too complicated and difficult to maintain.  Enter [chef](http://www.getchef.com/chef/), specifically [chef-solo](http://docs.opscode.com/chef_solo.html).  Chef allows you to quickly, cleany provision your machine with minimal effort.
+## Description
+This recipe is used to quickly bootstrap my host system with components I need for development.  Why did I do this?  I find myself enjoying new things and hate repeating myself.  With various machines (desktop and multiple latops), I find myself repeating the same installation when there is an update out.
 
-## Setup
-In order to bootstrap the system, you will need to install some pieces of software.
+## Usage
 
-What we will install is RVM, chef, berkshelf.
+### Default Setup
+Use the default recipe to install most commonly used components.
 
-```
-$ make setup
-```
+```recipe[bootstrap::default]```
 
-### Software Installed
-* rvm
-* chef
-* berkshelf
+The default setup will install the following components:
 
-### Post Setup
-If you are planning to install right after the setup command, you will need to source RVM from your current terminal with:
-
-```
-echo "source $HOME/.rvm/scripts/rvm" >> ~/.bashrc
-```
-
-## Installation
-Once the requirements have been met, simply run the install command.
-
-```
-$ make install
-```
-
-### Software Installed
-Below is a list of all software installed during the chef run.
 
 | software            | reason                          |
 | ------------------- | ------------------------------- |
@@ -58,3 +38,13 @@ Below is a list of all software installed during the chef run.
 | plex                | stream video via DLNA           |
 | steam               | video games                     |
 | zsh                 | terminal                        |
+
+
+### Multimedia System
+Use the default recipe to install plex media center to stream and play movies in your local network.
+
+```recipe[bootstrap::plex]```
+
+| software            | reason                          |
+| ------------------- | ------------------------------- |
+| plex                | stream video via DLNA           |
