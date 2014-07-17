@@ -41,7 +41,7 @@ end
 
 # install vagrant berkshelf
 execute "install vagrant berkshelf plugin" do
-  command "vagrant plugin install vagrant-berkshelf"
+  command "vagrant plugin install vagrant-berkshelf --plugin-version '>= 2.0.1'"
   action  :run
   user    node[:bootstrap][:user]
   group   node[:bootstrap][:user]
