@@ -9,7 +9,15 @@ group "docker" do
   members node[:bootstrap][:user]
   append true
 end
+
+case node['platform']
+when 'centos'
+  execute "remove the docker start library" do
+    command "rm -rf /var/lib/docker"
+    action :run
+  end
+end
+
 service "docker" do
   action :restart
 end
-
