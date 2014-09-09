@@ -40,6 +40,7 @@ The default setup will install the following components:
 | plex                | stream video via DLNA           |
 | steam               | video games                     |
 | zsh                 | terminal                        |
+| owncloud            | personal cloud storage          |
 
 
 ### Multimedia System
