@@ -3,7 +3,7 @@ case node['platform']
 # install ubuntu vagrant
 when 'ubuntu'
   # install vagrant
-  vagrant_deb_filename = "vagrant_1.6.5_x86_64"
+  vagrant_deb_filename = "vagrant_1.6.5_x86_64.deb"
   remote_file "/tmp/#{vagrant_deb_filename}" do
     source "https://dl.bintray.com/mitchellh/vagrant/#{vagrant_deb_filename}"
     mode 0644
