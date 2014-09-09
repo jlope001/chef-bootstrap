@@ -1,5 +1,5 @@
 # system tray software
-%w{guake indicator-multiload hamster-indicator indicator-cpufreq}.each do |pkg|
+%w{tilda indicator-multiload hamster-indicator indicator-cpufreq}.each do |pkg|
   package pkg do
     action :install
   end

@@ -3,11 +3,11 @@ case node['platform']
 # install ubuntu vagrant
 when 'ubuntu'
   # install vagrant
-  vagrant_deb_filename = "vagrant_1.6.3_x86_64.deb"
+  vagrant_deb_filename = "vagrant_1.6.5_x86_64"
   remote_file "/tmp/#{vagrant_deb_filename}" do
     source "https://dl.bintray.com/mitchellh/vagrant/#{vagrant_deb_filename}"
     mode 0644
-    checksum "0fc3259cf08b693e3383636256734513ee93bf258f8328efb64e1dde447aadbe"
+    checksum "e2c7af6d032ac551ebd6399265cb9cb64402c9fb96a12289161b7f67afada28a"
   end
 
   dpkg_package "vagrant" do
@@ -21,11 +21,11 @@ when 'ubuntu'
 
 # install centos
 when 'centos'
-  vagrant_rpm_filename = "vagrant_1.6.3_x86_64.rpm"
+  vagrant_rpm_filename = "vagrant_1.6.5_x86_64.rpm"
   remote_file "/tmp/#{vagrant_rpm_filename}" do
     source "https://dl.bintray.com/mitchellh/vagrant/#{vagrant_rpm_filename}"
     mode 0644
-    checksum "0fc3259cf08b693e3383636256734513ee93bf258f8328efb64e1dde447aadbe"
+    checksum "90730fd10cbd811969ec58f28818685f3074f8399852dfd1d4858d75c4224fdc"
   end
 
   rpm_package "vagrant" do
