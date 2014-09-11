@@ -18,17 +18,17 @@ execute "backup spotify resource.zip folder" do
   action :run
 end
 execute "unzip current resources folder" do
-  command "unzip /tmp/resources_old.zip -d /tmp/resources_old/"
+  command "unzip -o /tmp/resources_old.zip -d /tmp/resources_old/"
   action :run
 end
 remote_file "/tmp/resources_old/_linux/spotify_icon.ico" do
   source "https://raw.githubusercontent.com/faviouz/fix-spotify-icon/master/spotify_icon.ico"
 end
 execute "rezip resources" do
-  command "zip -r /tmp/resources_old/resources_patched.zip /tmp/resources_old/."
+  command "cd /tmp/resources_old && zip -rp /tmp/resources_patched.zip . && cd -"
   action :run
 end
 execute "copy recompiled resources back to spotify" do
-  command "cp /tmp/resources_old/resources_patched.zip /opt/spotify/spotify-client/Data/resources.zip"
+  command "cp /tmp/resources_patched.zip /opt/spotify/spotify-client/Data/resources.zip"
   action :run
 end
