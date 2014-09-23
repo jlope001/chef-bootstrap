@@ -1,4 +1,6 @@
-include_recipe "docker"
+package "docker" do
+  action :install
+end
 
 # create and add USER into docker group so we dont require sudo all the time
 group "docker" do
