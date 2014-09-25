@@ -10,7 +10,8 @@ when 'centos'
         curl_command_out = shell_out(curl_command)
 
         # centOS 6
-        if curl_command.stdout
+        if curl_command_out
+
           # EPEL
           yum_repository 'epel' do
             mirrorlist 'http://mirrors.fedoraproject.org/mirrorlist?repo=epel-6&arch=$basearch'
