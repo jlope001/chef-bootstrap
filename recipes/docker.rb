@@ -1,5 +1,17 @@
-package "docker" do
-  action :install
+# configure docker
+case node['platform']
+when 'ubuntu'
+  include_recipe "docker"
+
+when 'centos'
+
+  # setup EPEL - which will correctly setup EPEL repositories
+  include_recipe "bootstrap::epel"
+
+  # install docker
+  package "docker-io" do
+    action :install
+  end
 end
 
 # create and add USER into docker group so we dont require sudo all the time
