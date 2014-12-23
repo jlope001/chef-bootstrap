@@ -43,9 +43,17 @@ when 'centos'
       gpgcheck true
       gpgkey 'http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL'
     end
-    remote_file "/etc/yum.repos.d/docker.repo" do
-        source "https://copr.fedoraproject.org/coprs/goldmann/docker-io/repo/epel-7/goldmann-docker-io-epel-7.repo"
-        action :create
+
+    # docker
+    rpm_deocker_filename = "orangefort-release-el7.rpm"
+    remote_file "/tmp/#{rpm_deocker_filename}" do
+      source "https://secure.orangefort.com/packages/#{rpm_deocker_filename}"
+      mode 0644
+    end
+
+    rpm_package "docker" do
+        source "/tmp/#{rpm_deocker_filename}"
+        action :install
     end
   end
 end

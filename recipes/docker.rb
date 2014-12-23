@@ -9,7 +9,7 @@ when 'centos'
   include_recipe "bootstrap::epel"
 
   # install docker
-  package "docker-io" do
+  package "docker" do
     action :install
   end
 end
