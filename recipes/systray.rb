@@ -5,6 +5,15 @@
   end
 end
 
+execute "update bootloader so cpu freq works" do
+  command "sed -i 's~GRUB_CMDLINE_LINUX_DEFAULT=\"quiet splash\"~GRUB_CMDLINE_LINUX_DEFAULT=\"quiet splash intel_pstate=disable\"~g' /etc/default/grub"
+  action :run
+end
+execute "refresh grub settings" do
+  command "update-grub"
+  action :run
+end
+
 directory "/home/#{node[:bootstrap][:user]}/.config/autostart" do
   owner node[:bootstrap][:user]
   group node[:bootstrap][:user]
