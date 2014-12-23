@@ -2,6 +2,6 @@
 Terminal=false
 Type=Application
 Categories=
-GenericName=guake
+GenericName=tilda
 NoDisplay=false
-Exec=guake
+Exec=tilda

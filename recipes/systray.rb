@@ -18,8 +18,8 @@ template "/home/#{node[:bootstrap][:user]}/.config/autostart/hamster-applet.desk
   owner node[:bootstrap][:user]
   group node[:bootstrap][:user]
 end
-template "/home/#{node[:bootstrap][:user]}/.config/autostart/guake.desktop" do
-  source "systray/guake.conf.rb"
+template "/home/#{node[:bootstrap][:user]}/.config/autostart/tilda.desktop" do
+  source "systray/tilda.conf.rb"
   owner node[:bootstrap][:user]
   group node[:bootstrap][:user]
 end

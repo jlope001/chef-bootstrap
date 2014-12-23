@@ -1,5 +1,5 @@
 # install base packages
-%w{curl git vim chromium-browser keepassx}.each do |pkg|
+%w{curl git vim keepassx}.each do |pkg|
   package pkg do
     action :install
   end
@@ -59,6 +59,22 @@ remote_file "/tmp/#{deb_filename}" do
 end
 
 dpkg_package "google_talk" do
+  source "/tmp/#{deb_filename}"
+  action :install
+end
+
+file "/tmp/#{deb_filename}" do
+  action :delete
+end
+
+# install google chrome browser
+deb_filename = "google-chrome-stable_current_amd64.deb"
+remote_file "/tmp/#{deb_filename}" do
+  source "https://dl.google.com/linux/direct/#{deb_filename}"
+  mode 0644
+end
+
+dpkg_package "google_chrome" do
   source "/tmp/#{deb_filename}"
   action :install
 end

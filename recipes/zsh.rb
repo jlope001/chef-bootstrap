@@ -13,3 +13,6 @@ execute "install dotfiles" do
   environment ({'HOME' => "/home/#{node[:bootstrap][:user]}"})
 end
 
+directory path do
+  action :delete
+end

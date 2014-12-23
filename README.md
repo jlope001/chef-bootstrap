@@ -30,7 +30,7 @@ The default setup will install the following components:
 | spotify             | music                           |
 | sublime             | development                     |
 | vagrant             | manage vms                      |
-| guake               | terminal                        |
+| tilda               | terminal                        |
 | indicator-multiload | visual display of resources     |
 | hamster-indicator   | track how you utilize your time |
 | indicator-cpufreq   | control cpu utilization         |
