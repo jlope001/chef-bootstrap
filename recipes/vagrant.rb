@@ -7,7 +7,6 @@ when 'ubuntu'
   remote_file "/tmp/#{vagrant_deb_filename}" do
     source "https://dl.bintray.com/mitchellh/vagrant/#{vagrant_deb_filename}"
     mode 0644
-    checksum "6615b95fcd8044e2f5e1849ec1004df5e05e390812558ec2c4b3dcec541b92da"
   end
   dpkg_package "vagrant" do
     source "/tmp/#{vagrant_deb_filename}"
@@ -38,7 +37,6 @@ when 'centos'
   remote_file "/tmp/#{vagrant_rpm_filename}" do
     source "https://dl.bintray.com/mitchellh/vagrant/#{vagrant_rpm_filename}"
     mode 0644
-    checksum "b66be4b8f7921f59b00c186344c8501f97a26e172e94c3add7298b5147bcab27"
   end
   rpm_package "vagrant" do
     action :install
