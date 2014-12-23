@@ -14,5 +14,6 @@ execute "install dotfiles" do
 end
 
 directory path do
+  recursive true
   action :delete
 end

@@ -18,9 +18,9 @@ when 'ubuntu'
   end
 
   # install virtualbox
-  virtualbox_deb_filename = "virtualbox-4.3_4.3.20-96996~Ubuntu~raring_amd64.deb"
+  virtualbox_deb_filename = "virtualbox.deb"
   remote_file "/tmp/#{vagrant_deb_filename}" do
-    source "http://download.virtualbox.org/virtualbox/4.3.20/#{virtualbox_deb_filename}"
+    source "http://download.virtualbox.org/virtualbox/4.3.20/virtualbox-4.3_4.3.20-96996~Ubuntu~raring_amd64.deb"
     mode 0644
   end
   dpkg_package "virtualbox" do
@@ -49,9 +49,9 @@ when 'centos'
   end
 
   # install virtualbox
-  virtualbox_rpm_filename = "VirtualBox-4.3-4.3.20_96996_el7-1.x86_64.rpm"
+  virtualbox_rpm_filename = "virtualbox.rpm"
   remote_file "/tmp/#{virtualbox_rpm_filename}" do
-    source "http://download.virtualbox.org/virtualbox/4.3.20/#{virtualbox_rpm_filename}"
+    source "http://download.virtualbox.org/virtualbox/4.3.20/VirtualBox-4.3-4.3.20_96996_el7-1.x86_64.rpm"
     mode 0644
   end
   rpm_package "virtualbox" do
