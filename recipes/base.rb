@@ -82,3 +82,10 @@ end
 file "/tmp/#{deb_filename}" do
   action :delete
 end
+
+# remove all packages not needed because i dont like it at all
+%w{thunderbird firefox}.each do |pkg|
+  package pkg do
+    action :install
+  end
+end
