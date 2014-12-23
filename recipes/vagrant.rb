@@ -18,7 +18,7 @@ when 'ubuntu'
 
   # install virtualbox
   virtualbox_deb_filename = "virtualbox.deb"
-  remote_file "/tmp/#{vagrant_deb_filename}" do
+  remote_file "/tmp/#{virtualbox_deb_filename}" do
     source "http://download.virtualbox.org/virtualbox/4.3.20/virtualbox-4.3_4.3.20-96996~Ubuntu~raring_amd64.deb"
     mode 0644
   end
