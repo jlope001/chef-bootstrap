@@ -2,6 +2,12 @@ case node['platform']
 
 # install ubuntu vagrant
 when 'ubuntu'
+
+  # dependency for vagrant
+  package 'libsdl1.2debian' do
+    action :install
+  end
+
   # install vagrant
   vagrant_deb_filename = "vagrant_1.7.1_x86_64.deb"
   remote_file "/tmp/#{vagrant_deb_filename}" do

@@ -68,6 +68,12 @@ file "/tmp/#{deb_filename}" do
 end
 
 # install google chrome browser
+when 'ubuntu'
+  execute "force install of dependendies for google chrome" do
+    command "apt-get -f install libappindicator1 libindicator7"
+    action :run
+  end
+end
 deb_filename = "google-chrome-stable_current_amd64.deb"
 remote_file "/tmp/#{deb_filename}" do
   source "https://dl.google.com/linux/direct/#{deb_filename}"
