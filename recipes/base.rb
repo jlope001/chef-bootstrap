@@ -68,6 +68,7 @@ file "/tmp/#{deb_filename}" do
 end
 
 # install google chrome browser
+case node['platform']
 when 'ubuntu'
   execute "force install of dependendies for google chrome" do
     command "apt-get -f install libappindicator1 libindicator7"

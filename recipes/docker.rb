@@ -23,9 +23,7 @@ group "docker" do
   members node[:bootstrap][:user]
   append true
 end
-service "docker" do
-  action :stop
-end
+
 case node['platform']
 when 'centos'
   execute "remove the docker start library" do

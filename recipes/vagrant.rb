@@ -9,7 +9,7 @@ when 'ubuntu'
   end
 
   # install vagrant
-  vagrant_deb_filename = "vagrant_1.7.1_x86_64.deb"
+  vagrant_deb_filename = "vagrant_1.6.5_x86_64.deb"
   remote_file "/tmp/#{vagrant_deb_filename}" do
     source "https://dl.bintray.com/mitchellh/vagrant/#{vagrant_deb_filename}"
     mode 0644
@@ -39,7 +39,7 @@ when 'ubuntu'
 # install centos
 when 'centos'
   # install vagrant
-  vagrant_rpm_filename = "vagrant_1.7.1_x86_64.rpm"
+  vagrant_rpm_filename = "vagrant_1.6.5_x86_64.rpm"
   remote_file "/tmp/#{vagrant_rpm_filename}" do
     source "https://dl.bintray.com/mitchellh/vagrant/#{vagrant_rpm_filename}"
     mode 0644
