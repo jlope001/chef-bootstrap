@@ -9,7 +9,6 @@ package "hipchat" do
   action :install
 end
 
-# install base packages
 [
   'wget http://raelcunha.com/ubuntu-mono-dark/hipchat.svg -O /usr/share/icons/ubuntu-mono-dark/apps/22/hipchat.svg'
   'wget http://raelcunha.com/ubuntu-mono-light/hipchat.svg -O /usr/share/icons/ubuntu-mono-light/apps/22/hipchat.svg'

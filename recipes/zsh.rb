@@ -4,8 +4,8 @@ git path do
   action :checkout
 end
 
-execute "install dotfiles" do
-  command "./bootstrap.sh"
+bash "install dotfiles" do
+  code "./bootstrap.sh"
   cwd     path
   action  :run
   user    node[:bootstrap][:user]
