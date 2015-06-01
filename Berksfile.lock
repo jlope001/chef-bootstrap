@@ -2,6 +2,9 @@ DEPENDENCIES
   docker
     git: git://github.com/bflad/chef-docker.git
     revision: 8339a64aba7618d30e00db9721bb8e3faf453511
+  golang
+    git: git://github.com/NOX73/chef-golang.git
+    revision: 50cdfa1a95b8de5d5a4d51a3b013d59bbb96716b
 
 GRAPH
   apt (2.6.0)
@@ -35,7 +38,7 @@ GRAPH
     windows (>= 0.0.0)
     yum (~> 3.0)
     yum-epel (>= 0.0.0)
-  golang (1.4.0)
+  golang (1.5.1)
   homebrew (1.9.0)
   iptables (0.14.0)
   lxc (1.1.8)
