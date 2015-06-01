@@ -1,1 +1,1 @@
-include_recipe "go::default"
+include_recipe "golang::default"
