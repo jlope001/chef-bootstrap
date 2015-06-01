@@ -22,7 +22,7 @@ execute "unzip current resources folder" do
   action :run
 end
 remote_file "/tmp/resources_old/_linux/spotify_icon.ico" do
-  source "https://raw.githubusercontent.com/faviouz/fix-spotify-icon/master/spotify_icon.ico"
+  source "https://raw.githubusercontent.com/faviouz/fix-spotify-icon/master/src/images/spotify_icon.ico"
 end
 execute "rezip resources" do
   command "cd /tmp/resources_old && zip -rp /tmp/resources_patched.zip . && cd -"
