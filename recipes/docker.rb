@@ -1,7 +1,10 @@
 # configure docker
 case node['platform']
 when 'ubuntu'
-  include_recipe "docker"
+  execute "install docker via installation script" do
+    command "wget -qO- https://get.docker.com/ | sh"
+    action :run
+  end
 
 when 'centos'
 
