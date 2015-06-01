@@ -12,10 +12,11 @@ recipe            "bootstrap::vagrant", "vm manager"
 recipe            "bootstrap::owncloud", "personal cloud storage"
 recipe            "bootstrap::zsh", "terminal setup"
 recipe            "bootstrap::docker", "docker system"
-recipe            "bootstrap::epel", "Additional Repositories"
+recipe            "bootstrap::epel", "additional repositories"
+recipe            "bootstrap::golang", "setup golang on sytem"
 
 depends "apt"
 depends "docker"
 depends "yum"
-depends "go"
+depends "golang"
 
