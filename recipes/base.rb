@@ -1,5 +1,5 @@
 # install base packages
-%w{curl git vim keepassx}.each do |pkg|
+%w{curl git vim keepassx tilda tmux}.each do |pkg|
   package pkg do
     action :install
   end
