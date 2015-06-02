@@ -67,3 +67,13 @@ template "#{path}/Packages/User/PythonImproved.sublime-settings" do
   owner node[:bootstrap][:user]
   group node[:bootstrap][:user]
 end
+template "#{path}/Packages/User/GoSublime.sublime-settings" do
+  source "sublime/preferences.gosublime.conf.json"
+  owner node[:bootstrap][:user]
+  group node[:bootstrap][:user]
+end
+template "#{path}/Packages/User/Default\\ \\(Linux\\).sublime-keymap" do
+  source "sublime/keymap.conf.json"
+  owner node[:bootstrap][:user]
+  group node[:bootstrap][:user]
+end
