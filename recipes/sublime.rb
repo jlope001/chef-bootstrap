@@ -34,7 +34,7 @@ end
 
 # setup python - flake8 plugin
 git "#{path}/Packages/Python Flake8 Lint" do
-  repository "https://github.com/dreadatour/Flake8Lint.git"
+  repository "git://github.com/dreadatour/Flake8Lint.git"
   action :checkout
 end
 regex = "\\\"popup\\\": true\\\,"

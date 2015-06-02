@@ -1,6 +1,6 @@
 path = "/home/#{node[:bootstrap][:user]}/path"
 git path do
-  repository "https://github.com/jlope001/dotfiles.git"
+  repository "git://github.com/jlope001/dotfiles.git"
   action :checkout
 end
 
