@@ -1,9 +1,24 @@
 # configure docker
 case node['platform']
+
 when 'ubuntu'
-  execute "install docker via installation script" do
-    command "wget -qO- https://get.docker.com/ | sh"
-    action :run
+
+  # pre-requisites
+  %w{apt-transport-https ca-certificates}.each do |pkg|
+    package pkg do
+      action :install
+    end
+  end
+
+  apt_repository 'docker' do
+    uri          'https://apt.dockerproject.org/repo'
+    distribution  'ubuntu-wily'
+    components   ['main']
+    keyserver    'hkp://p80.pool.sks-keyservers.net'
+    key          '58118E89F3A912897C070ADBF76221572C52609D'
+  end
+  package "docker-engine" do
+   action :install
   end
 
 when 'centos'
@@ -38,3 +53,13 @@ end
 service "docker" do
   action :restart
 end
+
+execute "install docker via installation script" do
+  command "curl -L https://github.com/docker/compose/releases/download/1.6.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose"
+  action :run
+end
+
+file "/usr/local/bin/docker-compose" do
+  mode "755"
+end
+
