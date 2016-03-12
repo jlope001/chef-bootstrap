@@ -7,7 +7,6 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.1.38'
 
 recipe            "bootstrap::default", "default bootstrap option"
-recipe            "bootstrap::plex", "steam movies via plex media server"
 recipe            "bootstrap::vagrant", "vm manager"
 recipe            "bootstrap::owncloud", "personal cloud storage"
 recipe            "bootstrap::zsh", "terminal setup"

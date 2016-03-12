@@ -9,9 +9,9 @@ when 'ubuntu'
   end
 
   # install vagrant
-  vagrant_deb_filename = "vagrant_1.6.5_x86_64.deb"
+  vagrant_deb_filename = "vagrant_1.8.1_x86_64.deb"
   remote_file "/tmp/#{vagrant_deb_filename}" do
-    source "https://dl.bintray.com/mitchellh/vagrant/#{vagrant_deb_filename}"
+    source "https://releases.hashicorp.com/vagrant/1.8.1/#{vagrant_deb_filename}"
     mode 0644
   end
   dpkg_package "vagrant" do
@@ -25,7 +25,7 @@ when 'ubuntu'
   # install virtualbox
   virtualbox_deb_filename = "virtualbox.deb"
   remote_file "/tmp/#{virtualbox_deb_filename}" do
-    source "http://download.virtualbox.org/virtualbox/4.3.20/virtualbox-4.3_4.3.20-96996~Ubuntu~raring_amd64.deb"
+    source "http://download.virtualbox.org/virtualbox/5.0.16/virtualbox-5.0_5.0.16-105871~Ubuntu~wily_amd64.deb"
     mode 0644
   end
   dpkg_package "virtualbox" do
@@ -39,9 +39,9 @@ when 'ubuntu'
 # install centos
 when 'centos'
   # install vagrant
-  vagrant_rpm_filename = "vagrant_1.6.5_x86_64.rpm"
+  vagrant_rpm_filename = "vagrant_1.8.1_x86_64.rpm"
   remote_file "/tmp/#{vagrant_rpm_filename}" do
-    source "https://dl.bintray.com/mitchellh/vagrant/#{vagrant_rpm_filename}"
+    source "https://releases.hashicorp.com/vagrant/1.8.1/#{vagrant_rpm_filename}"
     mode 0644
   end
   rpm_package "vagrant" do
@@ -55,7 +55,7 @@ when 'centos'
   # install virtualbox
   virtualbox_rpm_filename = "virtualbox.rpm"
   remote_file "/tmp/#{virtualbox_rpm_filename}" do
-    source "http://download.virtualbox.org/virtualbox/4.3.20/VirtualBox-4.3-4.3.20_96996_el7-1.x86_64.rpm"
+    source "http://download.virtualbox.org/virtualbox/5.0.16/VirtualBox-5.0-5.0.16_105871_el7-1.x86_64.rpm"
     mode 0644
   end
   rpm_package "virtualbox" do
