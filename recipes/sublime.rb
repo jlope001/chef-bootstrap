@@ -29,7 +29,7 @@ end
 
 # setup package control
 remote_file "#{path}/Installed Packages/Package Control.sublime-package" do
-  source "https://sublime.wbond.net/Package%20Control.sublime-package"
+  source "http://sublime.wbond.net/Package%20Control.sublime-package"
 end
 
 # setup python - flake8 plugin

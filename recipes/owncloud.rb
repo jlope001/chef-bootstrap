@@ -1,7 +1,7 @@
 apt_repository 'owncloud' do
-  uri    'http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/xUbuntu_14.04/'
+  uri    'http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Ubuntu_16.04/'
   components ['/']
-  key    'http://download.opensuse.org/repositories/isv:ownCloud:desktop/xUbuntu_14.04/Release.key'
+  key    'http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Ubuntu_16.04/Release.key'
 end
 
 package "owncloud-client" do
